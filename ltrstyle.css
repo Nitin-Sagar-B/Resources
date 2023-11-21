@@ -1,0 +1,121 @@
+body {
+    font-family: 'Roboto Mono', monospace;
+    background-color: #0d1117;
+    color: #c9d1d9;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    padding: 10px;
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 15px;
+    transition: transform 0.3s;
+}
+
+header:hover {
+    transform: scale(1.02);
+}
+
+.column {
+    float: left;
+    width: 32.8%;
+    box-sizing: border-box;
+    padding: 20px;
+    border: 1px solid #30363d;
+    transition: max-height 0.5s ease-out, overflow 0.5s step-end;
+    max-height: 1000px;
+    margin-right: 0.5%;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #161b22;
+}
+.column:last-child {
+    margin-right: 0; 
+}
+
+h2 {
+    border-bottom: 1px solid #30363d;
+    padding-bottom: 10px;
+    margin-top: 0;
+    color: #58a6ff;
+}
+
+.column a {
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #c9d1d9;
+    transition: color 0.3s;
+}
+
+a {
+    color: #c9d1d9;
+}
+
+.column a:hover {
+    color: #58a6ff;
+}
+
+.column i {
+    margin-right: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .column {
+        width: 100%;
+        max-height: 50px;
+        border-radius: 10px;  
+        padding: 50px 20px;
+        margin-bottom: 15px;  
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);  
+        transition: all 0.3s;  
+    }
+
+    .column:hover {
+        transform: translateY(-5px);  
+    }
+
+    .column h2 {
+        cursor: pointer;
+        padding-bottom: 10px;  
+    }
+
+    .column h2:after {
+        content: '🔽';
+        float: right;
+        transition: transform 0.3s;  
+    }
+
+    .column.expanded {
+        max-height: 1000px;
+    }
+
+    .column.expanded h2:after {
+        content: '🔼';
+        transform: rotate(180deg);  
+    }
+}
+
+.column h2:active {
+    background-color: #0366d6;
+    color: white;
+}
+
+.category {
+    margin-top: 20px;
+    border-top: 1px solid #30363d;
+    padding-top: 10px;
+}
+
+.category h3 {
+    color: #c9d1d9;
+    font-size: 1.2em;
+    margin-top: 0;
+    padding-bottom: 5px;
+    background-color: #30363d;
+}
