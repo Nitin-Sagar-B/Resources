@@ -11,11 +11,18 @@ document.querySelectorAll('.column h2').forEach(header => {
 });
 
 document.querySelectorAll('.category h3').forEach(header => {
+    // Set initial state to hide all contents
+    let currentElement = header.nextElementSibling;
+    while (currentElement && currentElement.tagName !== 'H3') {
+        currentElement.style.display = "none";
+        currentElement = currentElement.nextElementSibling;
+    }
+
     header.addEventListener('click', function() {
         // Determine the target state (all should open or all should close)
         const shouldOpen = this.nextElementSibling.style.display !== "block";
         
-        let currentElement = this.nextElementSibling;
+        currentElement = this.nextElementSibling;
         while (currentElement && currentElement.tagName !== 'H3') {
             if (shouldOpen) {
                 currentElement.style.display = "block";
